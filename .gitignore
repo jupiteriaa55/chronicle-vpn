@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Env / secrets
+.env
+.env.local
+secrets/
+data/
+*.db
+*.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Android (Capacitor)
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+android/app/release/
+android/app/debug/
+*.apk
+
+# Web wrapper build
+web/dist/
+web/node_modules/
+node_modules/

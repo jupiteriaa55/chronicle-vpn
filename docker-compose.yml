@@ -1,0 +1,28 @@
+# docker-compose.yml — run the bot beside an existing WireGuard server.
+#
+# IMPORTANT: This compose file does NOT run WireGuard itself. Install WG on the
+# host first (scripts/wg-install.sh) so wg0 lives in the host network namespace
+# and the kernel handles tunneling. The bot just edits wg0.conf and runs `wg
+# syncconf`.
+
+services:
+  bot:
+    build: .
+    image: chronicle-vpn-bot:latest
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - bot-data:/data
+      # Bind-mount wg0.conf so the bot can rewrite it AND the host's wg-quick
+      # service sees the same file. Required when WG_RELOAD_MODE=wg-quick.
+      - /etc/wireguard:/etc/wireguard
+      # SSH key for remote reload (only used when WG_RELOAD_MODE=ssh).
+      - ./secrets:/run/secrets:ro
+    # The bot needs to run `wg`/`wg-quick` against the host interface in
+    # wg-quick mode. Easiest way: share the host network + give it CAP_NET_ADMIN.
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+
+volumes:
+  bot-data:
