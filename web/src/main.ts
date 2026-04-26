@@ -5,6 +5,9 @@
  * the FileProvider+ACTION_VIEW intent (provided by our native plugin).
  * On the web: triggers a browser download of the .conf file.
  */
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({ immediate: true });
 
 const $ = <T extends HTMLElement>(sel: string): T => {
   const el = document.querySelector<T>(sel);
