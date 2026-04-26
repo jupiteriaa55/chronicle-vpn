@@ -1,0 +1,105 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0d12;
+  --card: #151821;
+  --line: #232735;
+  --fg: #e7e9ef;
+  --muted: #8b91a0;
+  --accent: #6b8cff;
+  --accent-2: #4b6dd9;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100dvh;
+}
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hero {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+.hero .logo {
+  width: 64px;
+  height: 64px;
+}
+.hero h1 {
+  margin: 8px 0 0;
+  font-size: 28px;
+}
+.subtitle {
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.steps {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  color: var(--fg);
+}
+.steps li {
+  margin: 4px 0;
+}
+.muted {
+  color: var(--muted);
+}
+textarea {
+  width: 100%;
+  background: #0e1119;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  font: 13px/1.5 ui-monospace, Menlo, monospace;
+  resize: vertical;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: #1b2030;
+  color: var(--fg);
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+.btn.primary {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+  color: white;
+}
+.btn.ghost {
+  background: transparent;
+}
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 12px 0;
+}

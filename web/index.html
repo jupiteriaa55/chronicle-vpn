@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>Chronicle VPN</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <img src="/icon.svg" class="logo" alt="" />
+        <h1>Chronicle VPN</h1>
+        <p class="subtitle">WireGuard-based, fast, no logs.</p>
+      </header>
+
+      <section class="card">
+        <h2>Get connected</h2>
+        <ol class="steps">
+          <li>Open the bot in Telegram.</li>
+          <li>Tap <b>📥 Get config</b> — you'll receive a <code>.conf</code> file and a QR.</li>
+          <li>Hit <b>Open in WireGuard</b> below to import.</li>
+        </ol>
+        <a id="open-bot" class="btn primary" href="https://t.me/" target="_blank" rel="noopener">
+          Open Telegram bot
+        </a>
+        <a id="open-wireguard" class="btn ghost" href="#">
+          Open WireGuard app
+        </a>
+      </section>
+
+      <section class="card">
+        <h2>Paste config</h2>
+        <p class="muted">If you already have the <code>.conf</code> contents, paste it below to import directly.</p>
+        <textarea id="conf-input" rows="10" placeholder="[Interface]&#10;PrivateKey = ..."></textarea>
+        <button id="import-btn" class="btn primary">Import to WireGuard</button>
+        <p id="status" class="muted"></p>
+      </section>
+
+      <footer class="foot">
+        <span id="version">v0.1.0</span>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

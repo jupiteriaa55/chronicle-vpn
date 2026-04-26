@@ -1,0 +1,13 @@
+{
+  "name": "chronicle-vpn-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10",
+    "typescript": "^5.6.3"
+  }
+}
